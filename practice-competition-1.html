@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Consumer Healthcare Project</title>
+    <script src="practice.js"></script>
+    <link rel="stylesheet" type="text/css" href="practice.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <script>
+  
+  </script>
+  <script>
+    /** Instructions **/
+    function load() {
+      var instructions = document.getElementById("instructions");
+      var comp = document.getElementById("competition");
+      var col = document.getElementById("collaboration");   
+      var comp_step = document.getElementById("comp_step");
+      var col_step = document.getElementById("col_step");
+      var count = document.getElementById("comp_step").innerHtml = "3..2..1";
+      var system = document.getElementById("system");
+      var user = document.getElementById("user");
+    }
+    
+    function comp() {  
+      instructions.style.display = "none";
+      comp_step.style.display = "block";
+    }
+
+    function col() {
+      instructions.style.display = "none"; 
+      col_step.style.display = "block";
+    }
+
+    function start()
+    {
+      comp_step.style.display = "none";
+      document.getElementById("letters").style.display = "block";
+      document.getElementById("letters_text").style.display = "block";
+      document.getElementById("ready").style.display = "block";
+
+    }
+
+    function ready()
+    {
+      document.getElementById("letters").style.display = "none";
+      document.getElementById("letters_text").style.display = "none";
+      document.getElementById("ready").style.display = "none";
+      document.getElementById("question-1").style.display = "block";
+      system.classList.add('system');
+    }
+
+    function true1()
+    {
+      var pos = 0;
+      pos += 200;
+      user.style.left = pos + 'px';
+      document.getElementById("question-1").style.display = "none";
+      document.getElementById("question-2").style.display = "block";
+
+    }
+
+    function false2()
+    {
+      var pos = 200;
+      pos += 200;
+      user.style.left = pos + 'px';
+      document.getElementById("question-2").style.display = "none";
+      document.getElementById("question-3").style.display = "block";
+    }
+
+    function true3()
+    {
+      var pos = 400;
+      pos += 200;
+      user.style.left = pos + 'px';
+      document.getElementById("question-3").style.display = "none";
+      document.getElementById("question-4").style.display = "block";
+    }
+
+    function false4()
+    {
+      var pos = 600;
+      pos += 200;
+      user.style.left = pos + 'px';
+      document.getElementById("question-4").style.display = "none";
+      document.getElementById("question-5").style.display = "block";
+    }
+
+    function true5()
+    {
+      var pos = 800;
+      pos += 200;
+      user.style.left = pos + 'px';
+      document.getElementById("question-5").style.display = "none";
+      document.getElementById("winning-message").style.display = "block";
+    }
+
+    function menu()
+    {
+      document.getElementById("instructions").style.display = "block";
+      document.getElementById("winning-message").style.display = "none";
+      system.classList.remove('system');
+      user.style.left = 0 + 'px'; 
+    }
+
+    window.onload = load;
+  </script>
+  <body>
+    <div id="container">
+      <div id="instructions">
+        <h4>Instructions</h4>
+        <ol>
+          <li>This is your competitor / collaborator</li>
+          <li>You need to either beat or collaborate with them</li>
+          <li>There are two game types - COMPETITION and COLLABORATION</li>
+          <li>Click on the one you want to play first (We recommend you play COMPETITION</li>
+        </ol>
+        <button id="competition" class="btn btn-primary" onclick="comp()">PLAY COMPETITION</button>
+        <button id="collaboration" class="btn btn-primary" onclick="col()">PLAY COLLABORATION</div>
+      </div>
+      <div id="comp_step" style="display:none">
+        <h4>COMPETITION</h4>
+        <ol>
+          <li>
+            You need to reach the destination before your competitor does
+          </li>
+          <li>
+            The way you do it is by answering TRUE or FALSE questions about a random set of letters
+          </li>
+          <li>Ready to try?</li><br />
+          <div class="btn btn-primary" onclick="start()">START</div>
+        </ol>
+      </div>
+      <div id="ready">
+        <div class="btn btn-primary" onclick="ready()">I'M READY</div>
+      </div>
+      <div id="col_step" style="display:none">
+          <h4>COLLABORATION</h4>
+          <ol>
+            <li>You and your system's avatar need to reach the destination to win</li>
+            <li>The way you do it is by answering TRUE or FALSE questions about random appearing letters. Remember those?</li>
+            <li>You will need to answer questions not only for yourself, but for the system as wells</li>
+            <li>If you answer all questions correctly your team WINS</li>
+            <li>Ready to try?</li><br />
+            <div class="btn btn-primary" onclick="start()">START</div>
+          </ol>
+        </div>
+      <img id="point" src="images/points.png" />
+      <img id="user" src="avatars/animal.gif" />
+      <div id="letters_text">Remember the position of these letters (write them down if you need to)</div><br />
+      <img id="letters" src="images/alphabets/PUSAK.png">
+      <div id="question-1">
+        <div class="question">Was the first letter 'P'?</div> <br />
+        <button class="true btn btn-primary" onclick="true1()">TRUE</button>
+        <button class="false btn btn-primary" onclick="false1()">FALSE</button>
+      </div>
+      <div id="question-2">
+        <div class="question">Was the second letter 'X'?</div> <br />
+        <button class="true btn btn-primary" onclick="true2()">TRUE</button>
+        <button class="false btn btn-primary" onclick="false2()">FALSE</button>
+      </div>
+      <div id="question-3">
+        <div class="question">Was the third letter 'S'?</div> <br />
+        <button class="true btn btn-primary" onclick="true3()">TRUE</button>
+        <button class="false btn btn-primary" onclick="false3()">FALSE</button>
+      </div>
+      <div id="question-4">
+        <div class="question">Was the fourth letter 'Z'?</div> <br />
+        <button class="true btn btn-primary" onclick="true4()">TRUE</button>
+        <button class="false btn btn-primary" onclick="false4()">FALSE</button>
+      </div>
+      <div id="question-5">
+        <div class="question">Was the fifth letter 'K'?</div> <br />
+        <button class="true btn btn-primary" onclick="true5()">TRUE</button>
+        <button class="false btn btn-primary" onclick="false5()">FALSE</button>
+      </div>
+      <div id="winning-message">
+        GREAT JOB. YOU WON.<br />
+        <button class="true btn btn-primary" onclick="menu()">MAIN MENU</button>
+      </div>
+      <img id="system" src="avatars/system.gif" />
+    </div>
+  </body>
+</html>
