@@ -65,6 +65,14 @@
 
     }
 
+    function start_collab()
+    {
+      col_step.style.display = "none";
+      document.getElementById("letters").style.display = "block";
+      document.getElementById("letters_text").style.display = "block";
+      document.getElementById("ready_collab").style.display = "block";
+    }
+
     function ready()
     {
       document.getElementById("letters").style.display = "none";
@@ -73,12 +81,16 @@
       document.getElementById("question-1").style.display = "block";
       system.classList.add('system');
     }
-
+   
     function true1()
     {
       var pos = 0;
       pos += 200;
       user.style.left = pos + 'px';
+    }
+
+    if (user.style.left >= 200 + 'px' && system.style.left >= 0 + 'px')
+    {
       document.getElementById("question-1").style.display = "none";
       document.getElementById("question-2").style.display = "block";
 
@@ -92,6 +104,8 @@
       document.getElementById("question-2").style.display = "none";
       document.getElementById("question-3").style.display = "block";
     }
+
+    
 
     function true3()
     {
@@ -118,6 +132,113 @@
       user.style.left = pos + 'px';
       document.getElementById("question-5").style.display = "none";
       document.getElementById("winning-message").style.display = "block";
+    }
+
+    function ready_collab()
+    {
+      document.getElementById("letters").style.display = "none";
+      document.getElementById("letters_text").style.display = "none";
+      document.getElementById("ready_collab").style.display = "none";
+      document.getElementById("question-1").style.display = "block";
+    }
+
+
+    function true1()
+    {
+      var pos = 0;
+      pos += 200;
+      user.style.left = pos + 'px';
+    }
+
+    if (user.style.left == 200 + 'px' && system.style.left > 100 + 'px')
+    {
+      document.getElementById("question-1").style.display = "none";
+      document.getElementById("question-2").style.display = "block";
+
+    }
+
+    function false1a()
+    {
+      var pos = 0;
+      pos += 200;
+      system.style.left = pos + 'px';
+      document.getElementById("question-1").style.display = "none";
+      document.getElementById("question-1a").style.display = "block";
+
+    }
+
+    function false2()
+    {
+      var pos = 200;
+      pos += 200;
+      user.style.left = pos + 'px';
+      document.getElementById("question-1a").style.display = "none";
+      document.getElementById("question-2").style.display = "block";
+    }
+
+    function false2a()
+    {
+      var pos = 200;
+      pos += 200;
+      system.style.left = pos + 'px';
+      document.getElementById("question-2").style.display = "none";
+      document.getElementById("question-2a").style.display = "block";
+    }
+
+
+    function true3()
+    {
+      var pos = 400;
+      pos += 200;
+      user.style.left = pos + 'px';
+      document.getElementById("question-2a").style.display = "none";
+      document.getElementById("question-3").style.display = "block";
+    }
+
+        
+    function true3a()
+    {
+      var pos = 400;
+      pos += 200;
+      system.style.left = pos + 'px';
+      document.getElementById("question-3").style.display = "none";
+      document.getElementById("question-3a").style.display = "block";
+    }
+
+    function false4()
+    {
+      var pos = 600;
+      pos += 200;
+      user.style.left = pos + 'px';
+      document.getElementById("question-3a").style.display = "none";
+      document.getElementById("question-4").style.display = "block";
+    }
+
+    function false4a()
+    {
+      var pos = 600;
+      pos += 200;
+      system.style.left = pos + 'px';
+      document.getElementById("question-4").style.display = "none";
+      document.getElementById("question-4a").style.display = "block";
+    }
+
+    function true5()
+    {
+      var pos = 800;
+      pos += 200;
+      user.style.left = pos + 'px';
+      document.getElementById("question-4a").style.display = "none";
+      document.getElementById("question-5").style.display = "block";
+    }
+
+    function false5a()
+    {
+      var pos = 800;
+      pos += 200;
+      system.style.left = pos + 'px';
+      document.getElementById("question-5").style.display = "none";
+      document.getElementById("question-5a").style.display = "block";
     }
 
     function menu()
@@ -159,6 +280,9 @@
       <div id="ready">
         <div class="btn btn-primary" onclick="ready()">I'M READY</div>
       </div>
+      <div id="ready_collab">
+        <div class="btn btn-primary" onclick="ready_collab()">I'M READY</div>
+      </div>
       <div id="col_step" style="display:none">
           <h4>COLLABORATION</h4>
           <ol>
@@ -167,37 +291,93 @@
             <li>You will need to answer questions not only for yourself, but for the system as wells</li>
             <li>If you answer all questions correctly your team WINS</li>
             <li>Ready to try?</li><br />
-            <div class="btn btn-primary" onclick="start()">START</div>
+            <div class="btn btn-primary" onclick="start_collab()">START</div>
           </ol>
         </div>
       <img id="point" src="images/points.png" />
       <img id="user" src="avatars/animal.gif" />
       <div id="letters_text">Remember the position of these letters (write them down if you need to)</div><br />
       <img id="letters" src="images/alphabets/PUSAK.png">
+      
+      <div id="question-1c">
+        <div class="question">Was the first letter 'P'?</div> <br />
+        <button class="true btn btn-primary" onclick="true1()">TRUE</button>
+        <button class="false btn btn-primary" onclick="false1()">FALSE</button>
+      </div>
+
+      <div id="question-2c">
+        <div class="question">Was the second letter 'X'?</div> <br />
+        <button class="true btn btn-primary" onclick="true2()">TRUE</button>
+        <button class="false btn btn-primary" onclick="false2()">FALSE</button>
+      </div>
+      
+      <div id="question-3c">
+        <div class="question">Was the third letter 'S'?</div> <br />
+        <button class="true btn btn-primary" onclick="true3()">TRUE</button>
+        <button class="false btn btn-primary" onclick="false3()">FALSE</button>
+      </div>
+      
+      <div id="question-4c">
+        <div class="question">Was the fourth letter 'Z'?</div> <br />
+        <button class="true btn btn-primary" onclick="true4()">TRUE</button>
+        <button class="false btn btn-primary" onclick="false4()">FALSE</button>
+      </div>
+      
+      <div id="question-5c">
+        <div class="question">Was the fifth letter 'K'?</div> <br />
+        <button class="true btn btn-primary" onclick="true5()">TRUE</button>
+        <button class="false btn btn-primary" onclick="false5()">FALSE</button>
+      </div>
+      
       <div id="question-1">
         <div class="question">Was the first letter 'P'?</div> <br />
         <button class="true btn btn-primary" onclick="true1()">TRUE</button>
         <button class="false btn btn-primary" onclick="false1()">FALSE</button>
+      </div>
+      <div id="question-1a">
+        <div class="question">There were 6 six letters in total?</div> <br />
+        <button class="true btn btn-primary" onclick="true1a()">TRUE</button>
+        <button class="false btn btn-primary" onclick="false1a()">FALSE</button>
       </div>
       <div id="question-2">
         <div class="question">Was the second letter 'X'?</div> <br />
         <button class="true btn btn-primary" onclick="true2()">TRUE</button>
         <button class="false btn btn-primary" onclick="false2()">FALSE</button>
       </div>
+      <div id="question-2a">
+        <div class="question">There were 7 six letters in total?</div> <br />
+        <button class="true btn btn-primary" onclick="true2a()">TRUE</button>
+        <button class="false btn btn-primary" onclick="false2a()">FALSE</button>
+      </div>
       <div id="question-3">
         <div class="question">Was the third letter 'S'?</div> <br />
         <button class="true btn btn-primary" onclick="true3()">TRUE</button>
         <button class="false btn btn-primary" onclick="false3()">FALSE</button>
+      </div>
+      <div id="question-3a">
+        <div class="question">There were 5 six letters in total?</div> <br />
+        <button class="true btn btn-primary" onclick="true3a()">TRUE</button>
+        <button class="false btn btn-primary" onclick="false3a()">FALSE</button>
       </div>
       <div id="question-4">
         <div class="question">Was the fourth letter 'Z'?</div> <br />
         <button class="true btn btn-primary" onclick="true4()">TRUE</button>
         <button class="false btn btn-primary" onclick="false4()">FALSE</button>
       </div>
+      <div id="question-4a">
+        <div class="question">Does the letter 'A' appears twice?</div> <br />
+        <button class="true btn btn-primary" onclick="true4a()">TRUE</button>
+        <button class="false btn btn-primary" onclick="false4a()">FALSE</button>
+      </div>
       <div id="question-5">
         <div class="question">Was the fifth letter 'K'?</div> <br />
         <button class="true btn btn-primary" onclick="true5()">TRUE</button>
         <button class="false btn btn-primary" onclick="false5()">FALSE</button>
+      </div>
+      <div id="question-5a">
+        <div class="question">Does the letter 'K' appears twice?</div> <br />
+        <button class="true btn btn-primary" onclick="true5a()">TRUE</button>
+        <button class="false btn btn-primary" onclick="false5a()">FALSE</button>
       </div>
       <div id="winning-message">
         GREAT JOB. YOU WON.<br />
