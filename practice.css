@@ -13,6 +13,7 @@
 }
 
 /* Modal Content */
+
 .modal-content {
   background-color: #fefefe;
   margin: auto;
@@ -20,11 +21,8 @@
   border: 1px solid #888;
   width: 40%;
 }
-/**
 
- Winning-Message
-
- **/
+/**  Winning-Message **/
 
 #winning-message {
   display: none;
@@ -32,6 +30,7 @@
   font-weight: bold;
   font-size: 50px;
 }
+
 /**
   body
   {
@@ -39,11 +38,7 @@
   }
   **/
 
-/**
-
-Instructions
-
-**/
+/** Instructions **/
 
 #instructions {
   position: absolute;
@@ -81,8 +76,19 @@ Instructions
   line-height: 3em;
 }
 
+.step
+{
+  font-size: 20px;
+  font-family: 'Cabin', sans-serif;
+}
+
 /** Buttons **/
 
+#competition, #collaboration
+{
+  padding: 20;
+  font-family: 'Bangers', cursive;
+}
 #ready {
   position: absolute;
   margin-top: 20%;

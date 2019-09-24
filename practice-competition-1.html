@@ -7,6 +7,7 @@
     <title>Consumer Healthcare Project</title>
     <script src="practice.js"></script>
     <link rel="stylesheet" type="text/css" href="practice.css" />
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Bangers|Cabin|Farro|Hind+Madurai|News+Cycle&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link
       rel="stylesheet"
@@ -254,15 +255,16 @@
   <body>
     <div id="container">
       <div id="instructions">
-        <h4>Instructions</h4>
+        <h2>Instructions</h2>
         <ol>
-          <li>This is your competitor / collaborator</li>
-          <li>You need to either beat or collaborate with them</li>
-          <li>There are two game types - COMPETITION and COLLABORATION</li>
-          <li>Click on the one you want to play first (We recommend you play COMPETITION</li>
+          <li class="step">The character at the <b>TOP</b> is <b>YOU</b></li>
+          <li class="step">The character at the <b>BOTTOM</b> is <b>YOUR COMPETITOR</b></li>     
+          <li class="step">You need to either beat or collaborate with them</li>
+          <li class="step">There are two game types - <b>COMPETITION</b> and <b>COLLABORATION</b></li>
+          <li class="step">Click on the one you want to play first (We recommend you play COMPETITION)</li>
         </ol>
-        <button id="competition" class="btn btn-primary" onclick="comp()">PLAY COMPETITION</button>
-        <button id="collaboration" class="btn btn-primary" onclick="col()">PLAY COLLABORATION</div>
+        <button id="competition" class="btn btn-primary" onclick="comp()">COMPETITION</button>
+        <button id="collaboration" class="btn btn-primary" onclick="col()">COLLABORATION</div>
       </div>
       <div id="comp_step" style="display:none">
         <h4>COMPETITION</h4>
